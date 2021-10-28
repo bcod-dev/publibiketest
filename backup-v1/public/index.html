@@ -1,0 +1,116 @@
+<html lang="en">
+<!-- html Head -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Html Boilerplate</title>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Fontawesome styles -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
+        queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+    <!--[if IE 9]>
+            <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
+            rel="stylesheet" />
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <!--[if lte IE 8]>
+            <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
+            rel="stylesheet" />
+            <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<!-- End of html Head -->
+
+<body>
+    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap
+        p-0 shadow"> <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="index.html">Project name</a
+  >
+  <input
+    class="form-control form-control-dark w-100"
+    type="text"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <ul class="navbar-nav px-3 flex-row">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="about.html">About</a>
+
+    </li>
+    <li class="nav-item text-nowrap ml-4"> <a class="nav-link" href="index.html">Sign in</a>
+
+    </li>
+    </ul>
+</nav> -->
+    <main>
+            <div style="height:300px" id="map"></div>
+        <div class="box">
+            <div class="form-finding">
+                <div class="form-label-group">
+                    <button class="btn btn-secondary btn-block" onClick="initMap();">
+                        Get current location
+                    </button>
+                    <button class="btn btn-secondary btn-block" onClick="initMap();">
+                        <i class="fas fa-spinner"></i>
+                    </button>
+                </div>
+
+                <div class="text-center mb-4">
+                    <div class="form-finding-img-box">
+                    
+                    <img id="image-display" class="mb-4 form-finding-img" src="./public/assets/img/IMG_2910.PNG" alt="" width="160" height="160" />
+                    <input style="display:none" id="image" type="file" name="image" accept="image/*" onChange="readURL(this);" capture="camera">
+                    <a href="javascript:document.getElementById('image').click();"><i style="font-size:40px;" class="fas fa-camera new-photo"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="form-label-group">
+                    <label for="inputPassword">Comment</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputBikeID">Bike ID (Optional)</label>
+                    <input id="inputBikeID" class="form-control" placeholder="e.g 125" required="" autofocus="" />
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputEmail">Email address (Optional)</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="" required="" />
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputPhoneNumber">Phone number (Optional)</label>
+                    <input type="number" id="inputPhoneNumber" class="form-control" required="" />
+                </div>
+                <div class="box-action">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        Send
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/svg4everybody.min.js"></script>
+    <script src="./assets/js/svg4everybody.legacy.min.js"></script>
+    <script>
+        svg4everybody();
+    </script>
+</body>
+
+</html>

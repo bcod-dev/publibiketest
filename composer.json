@@ -1,0 +1,24 @@
+{
+  "name": "jerry/tinyfw",
+  "description": "Tiny Framework & MVC skeleton for small projects",
+  "authors": [
+    {
+      "name": "Jerry Pham",
+      "email": "jerry@andjerry.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-0": {
+      "TinyFw\\": "src/jerry/",
+      "Controller\\": "app/",
+      "": "src/"
+    }
+  },
+  "require": {
+    "phpmailer/phpmailer": "^6.4"
+  },
+  "require-dev": {
+    
+  }
+}

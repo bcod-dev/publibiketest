@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+body {
+    background-color: #FAFAFA;
+    padding: 0;
+}
+
+.address-bar {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+div {
+    margin-bottom: 5px;
+}
+
+.iframe {
+    height: 200px;
+}
+
+.console {
+    min-height: 100px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.iframe {
+    border: none;
+    width: 100%;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.done-20x20 {
+    background: url(/public/_Image/done.png) no-repeat;
+}
+
+.loading-20x20 {
+    background: url(/public/_Image/loading.gif) no-repeat;
+}
+
+.canceled-20x20 {
+    background: url(/public/_Image/canceled.gif) no-repeat;
+}
+
+.message-loading {
+    margin-right: 10px;
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+.message-begin {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.proxy {
+    border-bottom: solid 1px;
+    padding: 10px;
+}

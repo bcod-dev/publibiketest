@@ -1,0 +1,149 @@
+[no_location_permission_use_comment]
+en="The authorization to determine the location is missing. Please enter the address in the "Comment" field."
+de="Es fehlt die Berechtigung für die Standort-Ermittlung.Bitte die Adresse im Feld "Bemerkung" eingeben."
+it=""
+fr=""
+
+[cant_get_address]
+en="Can not get the address"
+de=""
+it=""
+fr=""
+
+[location_doesnt_work]
+en="Error: the location determination does not work, please check your location settings. Alternatively, you can enter the address as a comment."
+de="Fehler: die Standort-Ermittlung funktioniert nicht, überprüfen Sie bitte Ihre Standort-Einstellungen. Alternativ können Sie die Adresse als Bemerkung angeben."
+it=""
+fr=""
+
+[browser_doesnt_support_location_service]
+en="Error: Your browser does not support location determination."
+de="Fehler: Ihr Browser unterstützt keine Standort-Ermittlung."
+it=""
+fr=""
+
+[send_success_thankyou]
+en="Thank you for your support, your message has been sent successfully."
+de="Besten Dank für Ihre Unterstützung, Ihre Nachricht wurde erfolgreich übermittelt."
+it=""
+fr=""
+
+[server_problem_try_again]
+en="Error: There is a problem with the server. Please try again."
+de="Fehler: Es besteht ein Problem mit dem Server. Bitte nochmals versuchen."
+it=""
+fr=""
+
+[location_or_comment]
+en="Please indicate the location by geolocation or as a comment."
+de="Bitte den Standort durch die Geolokalisierung oder als Bemerkung angeben."
+it=""
+fr=""
+
+[too_many_sumbmissions]
+en="Thank you for your support, but you have made too many submissions in a short amount of time"
+de="Besten Dank für Ihre Unterstützung, Sie haben jedoch zu viele Übermittlungen in kurzer Zeit getätigt"
+it=""
+fr=""
+
+[email_tittle]
+en="LOSTBIKE!"
+de="LOSTBIKE!"
+it=""
+fr=""
+
+[coordinate]
+en="Coordinates"
+de="Koordinaten"
+it=""
+fr=""
+
+[link_to_google_map]
+en="Link to google map"
+de="Link zu Google Maps"
+it=""
+fr=""
+
+[link_to_picture]
+en="Link to picture"
+de="Link zum Bild"
+it=""
+fr=""
+
+[comment]
+en="Comment"
+de="Bemerkung"
+it=""
+fr=""
+
+[lost_bike_id]
+en="Lost bike id"
+de="Betriebsnummer des Velos"
+it=""
+fr=""
+
+[email_addess]
+en="Email address"
+de="E-Mail-Adresse"
+it=""
+fr=""
+
+[phone_number]
+en="Phone number"
+de="Telefonnummer"
+it=""
+fr=""
+
+[my_loction]
+en="My location"
+de="Mein Standort"
+it=""
+fr=""
+
+[bike_number_on_lock_screen]
+en="The company number of the bike is printed on the lock screen"
+de="Die Firmennummer des Fahrrades in Sperrbildschirm gedruckt"
+it=""
+fr=""
+
+[send]
+en="SEND"
+de="SENDEN"
+it=""
+fr=""
+
+[your_location]
+en="Your location"
+de="Ihr Standort"
+it=""
+fr=""
+
+[thankyou_for_reporting]
+en="Thank you for reporting"
+de="Vielen Dank für Ihre Berichterstattung"
+it=""
+fr=""
+
+[download_the_app]
+en="Download the app"
+de="Lade App herunter"
+it=""
+fr=""
+
+[report_a_lost_bike]
+en="Report a lost bike"
+de="Ein verlorenes Fahrrad melden"
+it=""
+fr=""
+
+[download]
+en="Download"
+de="Herunterladen"
+it=""
+fr=""
+
+[language]
+en="Language"
+de="Sprache"
+it=""
+fr=""
