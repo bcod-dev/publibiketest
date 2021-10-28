@@ -1,6 +1,6 @@
 <main class="homepage">
       <div class="lang-selection">
-        
+        <?php echo "Hello" ?>
         <div class="dropup">
           <button class="dropdown-toggle btn-lang" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo trans('language'); ?><span class="flag is-selected">
