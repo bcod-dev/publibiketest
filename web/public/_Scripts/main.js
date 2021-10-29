@@ -243,6 +243,7 @@ function doSubmit(){
 	 // Read selected files
 	var totalfiles = document.getElementById('image').files.length;
 	for (var index = 0; index < totalfiles; index++) {
+		console.log(index);
 		data.append("image[]", document.getElementById('image').files[index]);
 	}
     //data.append( 'image',  file), "filename";
