@@ -38,8 +38,9 @@ class DefaultController extends Controller
     }
 
     public function reportAction()
-    {        
+    {  
         $domain =  str_replace("\\",'/',"http://".$_SERVER['HTTP_HOST'].substr(getcwd(),strlen($_SERVER['DOCUMENT_ROOT'])));
+		
 
         $lat = isset($_POST["lat"]) ? $_POST["lat"] : "";
         $lng = isset($_POST["lng"]) ? $_POST["lng"] : "";
@@ -50,11 +51,14 @@ class DefaultController extends Controller
         $phoneNumber = isset($_POST["phone_number"]) ? $_POST["phone_number"] : "";
         $googleMapLink = isset($_POST["google_map_link"]) ? $_POST["google_map_link"] : "";
         $googleMapLink = ($googleMapLink == "null" || $googleMapLink == null) ? "" : $googleMapLink;
-        $imageData = isset($_POST['image_base64']) ? $_POST['image_base64'] : "";
+        //$imageData = isset($_POST['image_base64']) ? $_POST['image_base64'] : "";
         $ip = $this->getRealIp();
 
 
         if($this->input->requestMethod() == 'POST'){
+			echo "<pre>";print_r($_FILES);exit;
+			//$fileNames = array_filter($_FILES['image']['name']);
+			//echo "<pre>";print_r($fileNames);//exit;
             $limitResult  = $this->checkLimit($ip);
             $limited = $limitResult['limited'];
             $limitedIn = $limitResult['limitedIn'];
@@ -63,10 +67,49 @@ class DefaultController extends Controller
             $uploadOkay = false;
             $imageUrl = null;
             if(!$limited){
-                $uploadResult = $this->doUpload($imageData);
-                $uploadOkay = $uploadResult['isUploadOk'];
-                $imageUrl = $uploadResult['imageUrl'];
-            }
+				 // File upload configuration 
+				$uploadDir = dirname(__FILE__, 3).'/uploads/';
+				$allowTypes = array('jpg','png','jpeg','gif'); 
+				if(!empty($fileNames)){ 
+					foreach($_FILES['image']['name'] as $key=>$val){ 
+						// File upload path 
+						$fileName = basename($_FILES['image']['name'][$key]); 
+						$targetFilePath = $uploadDir . $fileName; 
+						 
+						// Check whether file type is valid 
+						$fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION); 
+						if(in_array($fileType, $allowTypes)){ 
+							// Upload file to server 
+							if(move_uploaded_file($_FILES["image"]["tmp_name"][$key], $targetFilePath)){ 
+								//echo "load";
+								if($isUploadOk >= 0 ) { 
+									$isUploadOk = 1;
+								}
+								$imageUrl = null;
+								if($isUploadOk > 0 ){
+									$domain =  str_replace("\\",'/',"http://".$_SERVER['HTTP_HOST'].substr(getcwd(),strlen($_SERVER['DOCUMENT_ROOT'])));
+									$imageUrl = $isUploadOk == 1?  $domain."/uploads/".$fileName : "";   
+								}
+
+								return array(
+									'isUploadOk' => $isUploadOk, 
+									'imageUrl' => $imageUrl,
+									'isUploadOk' => $isUploadOk,
+									'isUploadOk' => $isUploadOk
+								);
+								
+							}else{ 
+								//echo "Not load";
+								$isUploadOk = -1;	
+							} 
+						}else{ 
+							throw new \Exception('invalid image type');
+						} 
+					}
+				}	
+				
+			}
+			//exit;
 
             //Send mail
             $mailOkay = false;
@@ -182,7 +225,7 @@ class DefaultController extends Controller
         
         $isUploadOk = 0;
         if($imageData != null && $imageData != "null" && $imageData != ""){
-            if (preg_match('/^data:image\/(\w+);base64,/', $imageData, $type)) {
+            /*if (preg_match('/^data:image\/(\w+);base64,/', $imageData, $type)) {
                 $imageData = substr($imageData, strpos($imageData, ',') + 1);
                 $type = strtolower($type[1]); // jpg, png, gif
                 $uploadFileType = $type;
@@ -198,12 +241,32 @@ class DefaultController extends Controller
                 }
             } else {
                 $isUploadOk = -1;
+            }*/
+			$allowed = array('jpg','jpeg','png','gif');
+			$ext = strtolower(pathinfo($imageData, PATHINFO_EXTENSION));
+			
+			if(!empty($imageData)){
+				if (!in_array($ext, $allowed)) {
+                    throw new \Exception('invalid image type');
+                }
+				if ($imageData === false) {
+                    $isUploadOk = -1;
+                }
+			}else {
+                $isUploadOk = -1;
             }
     
             if($isUploadOk >= 0 ) { 
+				echo "upload ok";
+				$fileNameCmps = explode(".", $imageData);
+				$fileExtension = strtolower(end($fileNameCmps));
+				$newFileName = md5(time() . $imageData) . '.' . $fileExtension;
+				/*echo "ImgType-".$imageFileType = strtolower(pathinfo($imageData,PATHINFO_EXTENSION));
                 $uploadFileName = md5(microtime().rand());
-                $uploadedFilePath = $uploadDir."/".$uploadFileName.".".$type;
-                file_put_contents($uploadedFilePath, $imageDataFile);
+                $uploadedFilePath = $uploadDir."/".$imageData; // Corect*/
+                $uploadedFilePath = $uploadDir."/".$newFileName;
+                //file_put_contents($uploadedFilePath, $imageData);
+                file_put_contents($uploadedFilePath, $imageData);
                 $isUploadOk = 1;
             }
         }
