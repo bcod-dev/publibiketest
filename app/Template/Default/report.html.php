@@ -22,7 +22,8 @@
               <div class="help-text" id="coordinates"></div>
               <p class="location-value__get">
                     <a href="javascript: getCurrentLocation();" class="text-blue"><strong><?php echo trans('my_loction'); ?></strong></a>
-                </p>
+              </p>
+			  <p class="text infotext">Location service in not activated</p>
             </div>
             
           </div>
@@ -71,12 +72,14 @@
             
 
             <div class="text-center mb-4">
-                <div id="img-wrap" style="display: none;" class="img-wrap mb-4">
-                    <a href="javascript:unloadImage();">
-                    <span class="close">&times;</span>
-                    </a>
-                    <img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="https://gamek.mediacdn.vn/133514250583805952/2021/5/6/photo-1-1620285346044255144007.jpg">
-                </div>
+				<div class="gallery-image">
+					<div id="img-wrap" style="display: none;" class="img-wrap mb-4">
+						<a href="javascript:unloadImage();">
+						<span class="close">&times;</span>
+						</a>
+						<img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="https://gamek.mediacdn.vn/133514250583805952/2021/5/6/photo-1-1620285346044255144007.jpg">
+					</div>
+				</div>
                 <!-- <img id="image-display" style="display: none;" class="mb-4 form-finding-img" alt="" width="160" height="160"> -->
               <div class="form-finding-img-box">
                   
@@ -84,10 +87,11 @@
                   style="display:none"
                   id="image"
                   type="file"
-                  name="image"
+                  name="image[]"
                   accept="image/*"
                   onChange="readURL(this);"
                   capture="camera"
+				  multiple
                 />
                 <a href="javascript:document.getElementById('image').click();"
                   ><i
@@ -99,6 +103,7 @@
             </div>
           </div>
           <p id="info" class="location-error"></p>
+          <p id="normal-text" class="text normalmsg"><?php echo trans('normal_text')?></p>
           <div class="box-action">
             <button class="btn btn-lg btn-block btn-primary btn-center" onclick="doSubmit();" type="submit">
             <?php echo trans('send')?>
@@ -153,7 +158,7 @@
               </svg>
             </div>
             <h4 class="thankyou-title"><?php echo trans('thankyou_for_reporting'); ?></h4>
-            <a href="https://open.publibike.ch/app">
+            <a href="https://publibike-service.ch/gefunden/">
             <button
               class="btn btn-lg btn-block btn-primary btn-center"
               type="submit"
