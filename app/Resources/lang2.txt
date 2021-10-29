@@ -125,8 +125,8 @@ it=""
 fr=""
 
 [download_the_app]
-en="Download the app"
-de="Lade App herunter"
+en="Back to main menu"
+de="Zurück zum Hauptmenu"
 it=""
 fr=""
 
@@ -139,6 +139,24 @@ fr=""
 [download]
 en="Download"
 de="Herunterladen"
+it=""
+fr=""
+
+[offers]
+en="Offers"
+de="Angebote"
+it=""
+fr=""
+
+[infos]
+en="Infos"
+de="Info"
+it=""
+fr=""
+
+[normal_text]
+en="Normal text"
+de="Falls das Schloss offen ist, bitte durch runterdrücken vom Hebel bis zum Klick schliessen."
 it=""
 fr=""
 
