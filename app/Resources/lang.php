@@ -88,8 +88,8 @@ const _LANG = array(
         'de' => 'Vielen Dank für Ihre Berichterstattung',
     ),
     'download_the_app' => array(
-        'en' => 'Download the app',
-        'de' => 'Lade App herunter',
+        'en' => 'Back to main menu',
+        'de' => 'Zurück zum Hauptmenu',
     ),
     'report_a_lost_bike' => array(
         'en' => 'Report a lost bike',
@@ -98,6 +98,18 @@ const _LANG = array(
     'download' => array(
         'en' => 'Download',
         'de' => 'Herunterladen',
+    ),
+	'offers' => array(
+        'en' => 'Offers',
+        'de' => 'Angebote',
+    ),
+	'infos' => array(
+        'en' => 'Infos',
+        'de' => 'Info',
+    ),
+	'normal_text' => array(
+        'en' => 'Normal text',
+        'de' => 'Falls das Schloss offen ist, bitte durch runterdrücken vom Hebel bis zum Klick schliessen.',
     ),
     'language' => array(
         'en' => 'Language', 
