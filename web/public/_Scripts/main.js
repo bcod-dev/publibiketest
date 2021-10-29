@@ -237,13 +237,18 @@ function doSubmit(){
     }
     console.log("doSubmit()", "Start uploading and sending email");
     $('.loading').show();
-    var file = $('#image')[0].files[0];
+    //var file = $('#image')[0].files[0];
     
     var data = new FormData();
+	 // Read selected files
+	var totalfiles = document.getElementById('image').files.length;
+	for (var index = 0; index < totalfiles; index++) {
+		data.append("image[]", document.getElementById('image').files[index]);
+	}
     //data.append( 'image',  file), "filename";
-    if(resizedImageBase64 != null){
+    /*if(resizedImageBase64 != null){
         data.append('image_base64', resizedImageBase64);
-    }
+    }*/
     data.append('lat', pos.lat);
     data.append('lng', pos.lng);
     data.append('comment', $('#inputComment').val());
@@ -316,11 +321,36 @@ function imageToDataUri(img, width, height) {
 
 //Capture image
 function readURL(input) {
-    if (input.files && input.files[0]) {
+    if (input.files) {
+		var img;
+		var inputfield;
+		var filesAmount = input.files.length;
+		console.log(filesAmount);
+		for (i = 0; i < filesAmount; i++) {
+		console.log(i);	
+		//console.log('Input value after upload: ', inputfield.value)
+		//var imgPath = inputfield.value;
+		//img = imgPath;
         var reader = new FileReader();
         console.log('run 1')
-        reader.onload = function (e) {
-            var imageBase64 = e.target.result;
+        reader.onload = function (event) {
+			console.log(event.target);
+			var imageBase64 = event.target.result;
+			//console.log(imageBase64);
+			//$($.parseHTML('<img>')).attr('src', event.target.result).appendTo('div.img-wrap');
+			//$('#image-display').attr('src', event.target.result);
+			//$('#img-wrap').show();
+			
+			$('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
+			$(".close").click(function(e){
+				e.preventDefault(); 
+				$(this).parent(".img-wrap").remove();
+				/*img.val = '';
+				input.value = null;
+				console.log('Input value after remove: ', inputfield.value)*/
+			});
+			
+            /*var imageBase64 = e.target.result;
             var img = new Image();
             img.onload = function() {
                 console.log(this.width, this.height, 'kaka');
@@ -341,12 +371,16 @@ function readURL(input) {
                 console.log('run 2')
                 resizedImageBase64 = newImg;
             }
-            img.src = imageBase64;                    
+            img.src = imageBase64; */                   
         };
-
-        reader.readAsDataURL(input.files[0]);
+		//reader.readAsDataURL(input.files[0]);
+        reader.readAsDataURL(input.files[i]);
+		console.log("For loop end");
+		}
     }
 }
+
+
 
 function unloadImage(){
     $('#image-display').removeAttr('src');
