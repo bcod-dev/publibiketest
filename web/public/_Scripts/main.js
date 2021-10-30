@@ -363,10 +363,8 @@ function selectpreview(id,e)
         var fileReader = new FileReader();
         fileReader.onload = (function(e) {
           var file = e.target;
-          $("<span class=\"pip\">" +
-            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-            "<br/><span class=\"remove"+id+"\" id=\"image_" + id + "\">Remove</span>" +
-            "</span>").insertAfter(".gallery-image);
+	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class=\"remove"+id+"\">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
+          
 
             $(".remove"+id).click(function(e){
 		    console.log("111222");
