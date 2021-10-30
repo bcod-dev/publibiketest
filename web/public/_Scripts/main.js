@@ -335,7 +335,9 @@ $(function () {
 	  console.log(f.name);
 	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
           
-          $(".remove").click(function(){
+          $(".remove").click(function(e){
+		  event.preventDefault(); 
+		  console.log("111111");
 			$(this).parent(".img-wrap").remove();
 			$("#image").val('');
           });
