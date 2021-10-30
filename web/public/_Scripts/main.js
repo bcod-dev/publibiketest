@@ -322,7 +322,7 @@ function imageToDataUri(img, width, height) {
 
 //Capture image
 function readURL(input) {
-    if (input.files) {
+   // if (input.files) {
 	    var files = e.target.files,
         filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
@@ -339,65 +339,8 @@ function readURL(input) {
         });
         fileReader.readAsDataURL(f);
       }
-		/*var img;
-		var inputfield;
-		var filesAmount = input.files.length;
-		console.log(filesAmount);
-		for (i = 0; i < filesAmount; i++) {
-		console.log(i);	
-		//console.log('Input value after upload: ', inputfield.value)
-		//var imgPath = inputfield.value;
-		//img = imgPath;
-        var reader = new FileReader();
-        console.log('run 1')
-        reader.onload = function (event) {
-			console.log(event.target);
-			var imageBase64 = event.target.result;
-			//console.log(imageBase64);
-			//$($.parseHTML('<img>')).attr('src', event.target.result).appendTo('div.img-wrap');
-			//$('#image-display').attr('src', event.target.result);
-			//$('#img-wrap').show();
-			
-			$('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
-			$(".close").click(function(event){
-				event.preventDefault(); 
-				console.log("11111");
-				console.log(reader.readAsDataURL(input.files[i]));
-				$(this).parent(".img-wrap").remove();
-				//$('#image').val();
-				/*img.val = '';
-				input.value = null;
-				console.log('Input value after remove: ', inputfield.value)*/
-			//});
-			
-            /*var imageBase64 = e.target.result;
-            var img = new Image();
-            img.onload = function() {
-                console.log(this.width, this.height, 'kaka');
-                var ew = 800;
-                var eh = 800;
-                var ratio = this.width/ew;
-                if(ratio > 1){
-                    var eh = this.height/ratio;
-                } else {
-                    ew = this.width;
-                    eh = this.height;
-                }
-                var newImg = imageToDataUri(this, ew, eh);
-                $('#image-display').attr('src', newImg);
-                //$('#image-display').show();
-                $('#img-wrap').show();
-                //$('#image-display').css('background-image', 'url(' + newImg + ')');
-                console.log('run 2')
-                resizedImageBase64 = newImg;
-            }
-            img.src = imageBase64; */                   
-        };
-		//reader.readAsDataURL(input.files[0]);
-       /* reader.readAsDataURL(input.files[i]);
-		console.log("For loop end");
-		}*/
-    }
+		
+    //}
 }
 
 
