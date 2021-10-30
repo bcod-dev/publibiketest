@@ -434,9 +434,9 @@ $('#upload').click(function(e) {
                 onError(message);
             }
         },
-        error: function(errror){
-            onError(message)
-        }
+        /*error: function(errror){
+            onError(errror)
+        }*/
     });
 });
 });	
