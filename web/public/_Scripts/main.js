@@ -321,7 +321,7 @@ function imageToDataUri(img, width, height) {
     }
 
 //Capture image
-function readURL(input) {
+/*function readURL(input) {
     if (input.files) {
 		var img;
 		var inputfield;
@@ -346,8 +346,6 @@ function readURL(input) {
 			$(".close").click(function(event){
 				event.preventDefault(); 
 				console.log("11111");
-				var newFileList = Array.from(event.target.files);
-				console.log(newFileList);
 				console.log(reader.readAsDataURL(input.files[i]));
 				$(this).parent(".img-wrap").remove();
 				//$('#image').val();
@@ -380,11 +378,30 @@ function readURL(input) {
             img.src = imageBase64; */                   
         };
 		//reader.readAsDataURL(input.files[0]);
-        reader.readAsDataURL(input.files[i]);
+       /* reader.readAsDataURL(input.files[i]);
 		console.log("For loop end");
 		}
     }
-}
+}*/
+
+$("#image").on("change", function(e) {
+      var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+	  console.log(f.name);
+          $("<span class=\"pip\">" + "<img class=\"imageThumb\" src=\"" + e.target.result + "\" width=\"100\" hieght=\"100\" title=\"" + f.name + "\"/>" + "<br/><span class=\"remove\">Remove image</span>" + "</span>").insertAfter("#coverImage");
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+			$("#image").val('');
+          });
+        });
+        fileReader.readAsDataURL(f);
+      }
+    });
 
 
 
