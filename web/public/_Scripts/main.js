@@ -386,7 +386,7 @@ $('#upload').click(function(e) {
     var data = new FormData();
 	 // Read selected files
 	var filesupload = window.filesToUpload;
-	if(filesupload.length != ""){
+	if(filesupload != "undefined" && filesupload != 0) {
 	console.log(filesupload.length);
 	var totalfiles = filesupload.length;
 	$.each($(filesupload), function(i, file) {
