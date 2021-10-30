@@ -388,10 +388,10 @@ $('#upload').click(function(e) {
 	var filesupload = window.filesToUpload;
 	console.log(filesupload.length);
 	var totalfiles = filesupload.length;
-	for (var index = 0; index < totalfiles; index++) {
-		console.log("Length: "+index);
-		data.append("image[]", document.getElementById('image').files[index]);
-	}
+	$.each($(filesupload), function(i, file) {
+		//console.log("Index:" +file);
+		data.append(i, file);
+	});
     //data.append( 'image',  file), "filename";
     /*if(resizedImageBase64 != null){
         data.append('image_base64', resizedImageBase64);
