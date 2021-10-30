@@ -362,7 +362,7 @@ $(function () {
     //}
 });
 	
-$('#doSubmit').click(function(e) {
+$('#upload').click(function(e) {
       "use strict";
       e.preventDefault();
 		
