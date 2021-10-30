@@ -366,7 +366,7 @@ function selectpreview(id,e)
           $("<span class=\"pip\">" +
             "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
             "<br/><span class=\"remove"+id+"\" id=\"image_" + id + "\">Remove</span>" +
-            "</span>").insertAfter("#showimage"+id);
+            "</span>").insertAfter(".gallery-image);
 
             $(".remove"+id).click(function(e){
 		    console.log("111222");
