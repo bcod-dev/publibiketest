@@ -388,9 +388,7 @@ $('#upload').click(function(e) {
 	var filesupload = window.filesToUpload;
 	if(filesupload != "undefined" && filesupload != 0) {
 	//console.log(filesupload.length);
-	var totalfiles = filesupload.length;
 	$.each($(filesupload), function(i, file) {
-		//console.log("Index:" +file);
 		data.append("image[]", file);
 	});
 	}	
