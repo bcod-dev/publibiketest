@@ -346,9 +346,11 @@ function readURL(input) {
 			$(".close").click(function(event){
 				event.preventDefault(); 
 				console.log("11111");
-				console.log(reader.readAsDataURL(input.files[0]));
+				var newFileList = Array.from(event.target.files);
+				console.log(newFileList);
+				console.log(reader.readAsDataURL(input.files[i]));
 				$(this).parent(".img-wrap").remove();
-				$('#image').val();
+				//$('#image').val();
 				/*img.val = '';
 				input.value = null;
 				console.log('Input value after remove: ', inputfield.value)*/
