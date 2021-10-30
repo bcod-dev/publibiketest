@@ -381,7 +381,7 @@ $('#upload').click(function(e) {
         return false;
     }
     console.log("doSubmit()", "Start uploading and sending email");
-    $('.loading').show();
+    //$('.loading').show();
     
     var data = new FormData();
 	 // Read selected files
