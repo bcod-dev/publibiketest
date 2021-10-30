@@ -56,9 +56,9 @@ class DefaultController extends Controller
 
 
         if($this->input->requestMethod() == 'POST'){
-			echo "<pre>";print_r($_FILES);//exit;
+			//echo "<pre>";print_r($_FILES);//exit;
 			$fileNames = array_filter($_FILES['image']['name']);
-			echo "<pre>";print_r($fileNames);//exit;
+			//echo "<pre>";print_r($fileNames);//exit;
             $limitResult  = $this->checkLimit($ip);
             $limited = $limitResult['limited'];
             $limitedIn = $limitResult['limitedIn'];
