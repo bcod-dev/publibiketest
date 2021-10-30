@@ -340,7 +340,6 @@ $(function () {
 		  event.preventDefault(); 
 		  console.log("111111");
 		  console.log(filesLength);
-		  files.splice(filesLength, 1);
 		  console.log(files);
 			$(this).parent(".img-wrap").remove();
 			//$("#image").val('');
@@ -366,14 +365,16 @@ function selectpreview(id,e)
           var file = e.target;
           var unique_id=Date.now();
 		console.log(unique_id);   
-	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="remove_'+unique_id+' close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
+	  //$('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="remove_'+unique_id+' close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
+           $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
           
 
-            $(".remove_'+unique_id+'").click(function(e){
+           //$(".remove_'+unique_id+'").click(function(e){
+	   $(".close").click(function(e){			    
 		    console.log("111222");
-		    const files = e.target.files; // 4 files
-	     files.splice(f, 1);
-             $(this).parent(".pip").remove();
+             $(this).parent(".img-wrap").remove();
+		    input.value = null;
+		    input.click();
 
           });
 
