@@ -89,7 +89,7 @@
                   type="file"
                   name="image[]"
                   accept="image/*"
-                  onChange="readURL(this);"
+                  //onChange="readURL(this);"
                   capture="camera"
 				  multiple
                 />
