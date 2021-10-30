@@ -99,6 +99,11 @@
                   ></i
                 ></a>
               </div>
+		    
+		    <div class="form-group">
+			   <lable>Select Multiple Image</lable>
+			   <input type="file" name="imagegd[0][]" class="form-control filesimage0" multiple onchange="selectpreview(0,event)">
+		      </div>
             </div>
           </div>
           <p id="info" class="location-error"></p>
