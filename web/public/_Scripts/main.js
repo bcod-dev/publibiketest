@@ -334,8 +334,8 @@ $(function () {
         $("[id^=previewImg]").remove();
         $.each(this.files, function(i, img) {
           var reader = new FileReader(),
-            newElement = $("<div id='previewImg" + i + "' class='abcd'><img /></div>"),
-            deleteBtn = $("<span class='delete' onClick='deletePreview(this, " + i + ")'>delete</span>").prependTo(newElement),
+            newElement = $("<div id='previewImg" + i + "' class='img-wrap mb-4'><img /></div>"),
+            deleteBtn = $("<span class='close' onClick='deletePreview(this, " + i + ")'>&times;</span>").prependTo(newElement),
             preview = newElement.find("img");
 
           reader.onloadend = function() {
