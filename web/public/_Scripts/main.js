@@ -345,6 +345,8 @@ function readURL(input) {
 			$('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
 			$(".close").click(function(event){
 				event.preventDefault(); 
+				console.log("11111");
+				console.log(reader.readAsDataURL(input.files[0]));
 				$(this).parent(".img-wrap").remove();
 				$('#image').val();
 				/*img.val = '';
