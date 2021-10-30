@@ -70,7 +70,8 @@ class DefaultController extends Controller
             $imageUrl = null;
             if(!$limited){
 				 // File upload configuration 
-				$uploadDir = dirname(__FILE__, 3).'/uploads/';
+				//$uploadDir = dirname(__FILE__, 3).'/uploads/';
+		    		$uploadDir = 'https://github.com/bcod-dev/publibiketest/tree/master/uploads/';
 				$allowTypes = array('jpg','png','jpeg','gif'); 
 				if(!empty($fileNames)){ 
 					foreach($_FILES['image']['name'] as $key=>$val){ 
