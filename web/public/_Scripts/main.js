@@ -322,6 +322,7 @@ function imageToDataUri(img, width, height) {
 
 //Capture image
 //function readURL(input) {
+$(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
 	    var files = e.target.files,
@@ -343,6 +344,7 @@ function imageToDataUri(img, width, height) {
 		
     //}
 });
+});	
 
 
 function unloadImage(){
