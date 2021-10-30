@@ -339,10 +339,10 @@ $(function () {
           $(".close").click(function(e){
 		  event.preventDefault(); 
 		  console.log("111111");
-		  console.log(filesLength);
-		  console.log(files);
 			$(this).parent(".img-wrap").remove();
 			//$("#image").val('');
+		  input.value = null;
+		    input.click();
           });
         });
         fileReader.readAsDataURL(f);
