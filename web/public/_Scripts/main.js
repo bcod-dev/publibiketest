@@ -344,7 +344,7 @@ $(function () {
           };
 
           try {
-            window.filesToUpload.push(document.getElementById("file").files[i]);
+            window.filesToUpload.push(document.getElementById("image").files[i]);
           } catch (e) {
             console.log(e.message);
           }
