@@ -437,6 +437,7 @@ $('#upload').click(function(e) {
         }
     });
 });
+});	
 
  function deletePreview(ele, i) {
       "use strict";
