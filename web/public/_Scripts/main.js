@@ -341,6 +341,10 @@ $(function () {
           reader.onloadend = function() {
             preview.attr("src", reader.result);
             preview.attr("alt", img.name);
+	    preview.attr("id", "image-display");
+            preview.attr("class", "mb-4 form-finding-img");
+            preview.attr("width", "160");
+            preview.attr("height", "160");	  
           };
 
           try {
