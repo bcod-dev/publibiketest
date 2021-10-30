@@ -326,7 +326,7 @@ $(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
 	 var files = e.target.files,
-	 console.log(files);    
+	 //console.log(files);    
         filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
         var f = files[i]
