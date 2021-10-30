@@ -326,6 +326,7 @@ $(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
 	 var files = e.target.files,
+	 console.log(files);    
         filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
         var f = files[i]
@@ -338,8 +339,11 @@ $(function () {
           $(".close").click(function(e){
 		  event.preventDefault(); 
 		  console.log("111111");
+		  console.log(filesLength);
+		  files.splice(filesLength, 1);
+		  console.log(files);
 			$(this).parent(".img-wrap").remove();
-			$("#image").val('');
+			//$("#image").val('');
           });
         });
         fileReader.readAsDataURL(f);
@@ -347,7 +351,35 @@ $(function () {
 		
     //}
 });
-});	
+});
+
+function selectpreview(id,e)
+{
+   console.log(id);		
+    var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<span class=\"pip\">" +
+            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove"+id+"\" id=\"image_" + id + "\">Remove</span>" +
+            "</span>").insertAfter("#showimage"+id);
+
+            $(".remove"+id).click(function(e){
+		    console.log("111222");
+		    const files = e.target.files; // 4 files
+	     files.splice(id, 1);
+             $(this).parent(".pip").remove();
+
+          });
+
+        });
+        fileReader.readAsDataURL(f);
+      }
+}
 
 
 function unloadImage(){
