@@ -99,17 +99,13 @@
                   ></i
                 ></a>
               </div>
-		    
-		    <div class="form-group">
-			   <lable>Select Multiple Image</lable>
-			   <input type="file" name="imagegd[0][]" class="form-control filesimage0" multiple onchange="selectpreview(0,event)">
-		      </div>
+	
             </div>
           </div>
           <p id="info" class="location-error"></p>
           <p id="normal-text" class="text normalmsg"><?php echo trans('normal_text')?></p>
           <div class="box-action">
-            <button class="btn btn-lg btn-block btn-primary btn-center" onclick="doSubmit();" type="submit">
+            <button class="btn btn-lg btn-block btn-primary btn-center" id="doSubmit" type="submit">
             <?php echo trans('send')?>
             </button>
           </div>
