@@ -369,6 +369,7 @@ $(function () {
 $('#upload').click(function(e) {
       "use strict";
       e.preventDefault();
+	console.log(window.filesToUpload);
 	
       /*if (window.filesToUpload.length === 0 || typeof window.filesToUpload === "undefined") {
         alert("No files are selected.");
@@ -381,7 +382,6 @@ $('#upload').click(function(e) {
     }
     console.log("doSubmit()", "Start uploading and sending email");
     $('.loading').show();
-    //var file = $('#image')[0].files[0];
     
     var data = new FormData();
 	 // Read selected files
@@ -435,13 +435,6 @@ $('#upload').click(function(e) {
         error: function(errror){
             onError(error)
         }
-    
-	
-	console.log(window.filesToUpload);
-	  
-
-      // Now, upload the files below...
-      // https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications#Handling_the_upload_process_for_a_file.2C_asynchronously
     });
 });
 
