@@ -364,10 +364,12 @@ function selectpreview(id,e)
         var fileReader = new FileReader();
         fileReader.onload = (function(e) {
           var file = e.target;
-	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class=\"remove"+f+"\">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
+          var unique_id=Date.now();
+		console.log(unique_id);   
+	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class=\"close_'+unique_id+'"\">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
           
 
-            $(".remove"+f).click(function(e){
+            $(".close_'+unique_id+'").click(function(e){
 		    console.log("111222");
 		    const files = e.target.files; // 4 files
 	     files.splice(f, 1);
