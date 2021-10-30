@@ -325,34 +325,53 @@ function imageToDataUri(img, width, height) {
 $(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
-	 var input=document.getElementById("image").value;  
-	 var files = e.target.files,
-	 //console.log(files);    
-        filesLength = files.length;
-	 
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-	  console.log(f.name);
-	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
-          
-          $(".close").click(function(e){
-		  e.preventDefault(); 
-		  console.log("111111");
-			$(this).parent(".img-wrap").remove();
-			//$("#image").val('');
-		  input.value = null;
-		    input.click();
-          });
+	"use strict";
+
+      // create an empty array for the files to reside.
+      window.filesToUpload = [];
+
+      if (this.files.length >= 1) {
+        $("[id^=previewImg]").remove();
+        $.each(this.files, function(i, img) {
+          var reader = new FileReader(),
+            newElement = $("<div id='previewImg" + i + "' class='abcd'><img /></div>"),
+            deleteBtn = $("<span class='delete' onClick='deletePreview(this, " + i + ")'>delete</span>").prependTo(newElement),
+            preview = newElement.find("img");
+
+          reader.onloadend = function() {
+            preview.attr("src", reader.result);
+            preview.attr("alt", img.name);
+          };
+
+          try {
+            window.filesToUpload.push(document.getElementById("file").files[i]);
+          } catch (e) {
+            console.log(e.message);
+          }
+
+          if (img) {
+            reader.readAsDataURL(img);
+          } else {
+            preview.src = "";
+          }
+
+          newElement.appendTo(".gallery-image");
         });
-        fileReader.readAsDataURL(f);
-      }
+      } 
 		
     //}
 });
 });
+
+ function deletePreview(ele, i) {
+      "use strict";
+      try {
+        $(ele).parent().remove();
+        window.filesToUpload.splice(i, 1);
+      } catch (e) {
+        console.log(e.message);
+      }
+    }
 
 function selectpreview(id,e)
 {
