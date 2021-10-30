@@ -369,16 +369,75 @@ $(function () {
 $('#upload').click(function(e) {
       "use strict";
       e.preventDefault();
-		
-
-      if (window.filesToUpload.length === 0 || typeof window.filesToUpload === "undefined") {
+	
+      /*if (window.filesToUpload.length === 0 || typeof window.filesToUpload === "undefined") {
         alert("No files are selected.");
         return false;
-      }/*else{
-			console.log(window.filesToUpload);
-	  
-	  }*/
-	  console.log(window.filesToUpload);
+      }*/
+	
+	if((pos == null || pos.lat == null || pos.lng == null) && $('#inputComment').val().trim() == ""){
+        showError('location_or_comment');
+        return false;
+    }
+    console.log("doSubmit()", "Start uploading and sending email");
+    $('.loading').show();
+    //var file = $('#image')[0].files[0];
+    
+    var data = new FormData();
+	 // Read selected files
+	var totalfiles = document.getElementById('image').files.length;
+	for (var index = 0; index < totalfiles; index++) {
+		console.log("Length: "+index);
+		data.append("image[]", document.getElementById('image').files[index]);
+	}
+    //data.append( 'image',  file), "filename";
+    /*if(resizedImageBase64 != null){
+        data.append('image_base64', resizedImageBase64);
+    }*/
+    data.append('lat', pos.lat);
+    data.append('lng', pos.lng);
+    data.append('comment', $('#inputComment').val());
+    data.append('bike_id', $('#inputBikeID').val());
+    data.append('email', $('#inputEmail').val());
+    data.append('phone_number', $('#inputPhoneNumber').val());
+    data.append('google_map_link', googleMapLink);
+
+    //This is for debug purpose only
+    var object = {};
+        data.forEach(function(value, key){
+        object[key] = value;
+    });
+    console.log('collected data', object);
+
+    //TODO Check if the note is entered or the location is there, require for notes or location
+    
+    $.ajax({ 
+        url: '?_act_=report', 
+        type: 'post', 
+        data: data, 
+        contentType: false, 
+        processData: false, 
+        success: function(response){ 
+            console.log('response', response);
+            if(response.success){
+                onSuccess();
+            } else {
+                var message = null;
+                if(response.limited){
+                    //alert('limit');
+                    var limitedIn = response.limited_in;
+                    var message = "too_many_sumbmissions";
+                }
+                //Unknow error
+                onError(message);
+            }
+        },
+        error: function(errror){
+            onError(error)
+        }
+    
+	
+	console.log(window.filesToUpload);
 	  
 
       // Now, upload the files below...
