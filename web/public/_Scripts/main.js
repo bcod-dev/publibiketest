@@ -359,17 +359,18 @@ function selectpreview(id,e)
     var files = e.target.files,
         filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
+        var f = files[i];
+	 console.log(f);     
         var fileReader = new FileReader();
         fileReader.onload = (function(e) {
           var file = e.target;
-	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class=\"remove"+id+"\">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
+	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class=\"remove"+f+"\">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+e.target.result+'"></div>');
           
 
-            $(".remove"+id).click(function(e){
+            $(".remove"+f).click(function(e){
 		    console.log("111222");
 		    const files = e.target.files; // 4 files
-	     files.splice(id, 1);
+	     files.splice(f, 1);
              $(this).parent(".pip").remove();
 
           });
