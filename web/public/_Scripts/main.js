@@ -361,6 +361,25 @@ $(function () {
 		
     //}
 });
+	
+$('#doSubmit').click(function(e) {
+      "use strict";
+      e.preventDefault();
+		
+
+      if (window.filesToUpload.length === 0 || typeof window.filesToUpload === "undefined") {
+        alert("No files are selected.");
+        return false;
+      }/*else{
+			console.log(window.filesToUpload);
+	  
+	  }*/
+	  console.log(window.filesToUpload);
+	  
+
+      // Now, upload the files below...
+      // https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications#Handling_the_upload_process_for_a_file.2C_asynchronously
+    });
 });
 
  function deletePreview(ele, i) {
