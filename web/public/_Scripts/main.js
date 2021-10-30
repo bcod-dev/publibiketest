@@ -325,9 +325,11 @@ function imageToDataUri(img, width, height) {
 $(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
+	 var input=document.getElementById("image").value;  
 	 var files = e.target.files,
 	 //console.log(files);    
         filesLength = files.length;
+	 
       for (var i = 0; i < filesLength; i++) {
         var f = files[i]
         var fileReader = new FileReader();
@@ -337,7 +339,7 @@ $(function () {
 	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
           
           $(".close").click(function(e){
-		  event.preventDefault(); 
+		  e.preventDefault(); 
 		  console.log("111111");
 			$(this).parent(".img-wrap").remove();
 			//$("#image").val('');
