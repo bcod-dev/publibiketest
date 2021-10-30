@@ -321,9 +321,25 @@ function imageToDataUri(img, width, height) {
     }
 
 //Capture image
-/*function readURL(input) {
+function readURL(input) {
     if (input.files) {
-		var img;
+	    var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+	  console.log(f.name);
+          $("<span class=\"pip\">" + "<img class=\"imageThumb\" src=\"" + e.target.result + "\" width=\"100\" hieght=\"100\" title=\"" + f.name + "\"/>" + "<br/><span class=\"remove\">Remove image</span>" + "</span>").insertAfter("#coverImage");
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+			$("#image").val('');
+          });
+        });
+        fileReader.readAsDataURL(f);
+      }
+		/*var img;
 		var inputfield;
 		var filesAmount = input.files.length;
 		console.log(filesAmount);
@@ -381,28 +397,8 @@ function imageToDataUri(img, width, height) {
        /* reader.readAsDataURL(input.files[i]);
 		console.log("For loop end");
 		}
-    }
-}*/
-
-$("#image").on("change", function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-	  console.log(f.name);
-          $("<span class=\"pip\">" + "<img class=\"imageThumb\" src=\"" + e.target.result + "\" width=\"100\" hieght=\"100\" title=\"" + f.name + "\"/>" + "<br/><span class=\"remove\">Remove image</span>" + "</span>").insertAfter("#coverImage");
-          $(".remove").click(function(){
-            $(this).parent(".pip").remove();
-			$("#image").val('');
-          });
-        });
-        fileReader.readAsDataURL(f);
-      }
-    });
-
+    }*/
+}
 
 
 function unloadImage(){
