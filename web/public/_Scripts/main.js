@@ -385,7 +385,9 @@ $('#upload').click(function(e) {
     
     var data = new FormData();
 	 // Read selected files
-	var totalfiles = document.getElementById('image').files.length;
+	var filesupload = window.filesToUpload;
+	console.log(filesupload.length);
+	var totalfiles = filesupload.length;
 	for (var index = 0; index < totalfiles; index++) {
 		console.log("Length: "+index);
 		data.append("image[]", document.getElementById('image').files[index]);
