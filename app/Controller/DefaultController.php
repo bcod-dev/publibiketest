@@ -84,7 +84,7 @@ class DefaultController extends Controller
 						if(in_array($fileType, $allowTypes)){ 
 							// Upload file to server 
 							if(move_uploaded_file($_FILES["image"]["tmp_name"][$key], $targetFilePath)){ 
-								//echo "load";
+								echo "load";
 								if($isUploadOk >= 0 ) { 
 									$isUploadOk = 1;
 								}
