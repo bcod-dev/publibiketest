@@ -343,9 +343,10 @@ function readURL(input) {
 			//$('#img-wrap').show();
 			
 			$('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
-			$(".close").click(function(e){
-				e.preventDefault(); 
+			$(".close").click(function(event){
+				event.preventDefault(); 
 				$(this).parent(".img-wrap").remove();
+				$('#image').val();
 				/*img.val = '';
 				input.value = null;
 				console.log('Input value after remove: ', inputfield.value)*/
