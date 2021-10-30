@@ -209,7 +209,7 @@ class DefaultController extends Controller
     {
         $result  = array(
             'limited' => false, 
-            //'limitedIn' => -1,
+            'limitedIn' => -1,
         );
 
         //1 time limit 60s per ip 
