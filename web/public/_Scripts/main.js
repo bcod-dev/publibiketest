@@ -325,7 +325,7 @@ function imageToDataUri(img, width, height) {
 $(function () {
  $("#image").on("change", function(e) {
    // if (input.files) {
-	    var files = e.target.files,
+	 var files = e.target.files,
         filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
         var f = files[i]
@@ -333,9 +333,10 @@ $(function () {
         fileReader.onload = (function(e) {
           var file = e.target;
 	  console.log(f.name);
-          $("<span class=\"pip\">" + "<img class=\"imageThumb\" src=\"" + e.target.result + "\" width=\"100\" hieght=\"100\" title=\"" + f.name + "\"/>" + "<br/><span class=\"remove\">Remove image</span>" + "</span>").insertAfter("#coverImage");
+	  $('.gallery-image').append('<div class="img-wrap" class="img-wrap mb-4"><span class="close">&times;</span><img id="image-display" class="mb-4 form-finding-img" alt="" width="160" height="160" src="'+event.target.result+'"></div>');
+          
           $(".remove").click(function(){
-            $(this).parent(".pip").remove();
+			$(this).parent(".img-wrap").remove();
 			$("#image").val('');
           });
         });
