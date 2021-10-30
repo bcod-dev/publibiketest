@@ -390,7 +390,7 @@ $('#upload').click(function(e) {
 	var totalfiles = filesupload.length;
 	$.each($(filesupload), function(i, file) {
 		//console.log("Index:" +file);
-		data.append(i, file);
+		data.append("image[]", file);
 	});
     //data.append( 'image',  file), "filename";
     /*if(resizedImageBase64 != null){
