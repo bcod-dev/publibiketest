@@ -289,7 +289,7 @@ function doSubmit(){
             }
         },
         error: function(errror){
-            onError(error)
+            onError(message)
         }
     }); 
 
