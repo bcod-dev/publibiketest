@@ -342,7 +342,7 @@ function imageToDataUri(img, width, height) {
       }
 		
     //}
-}
+});
 
 
 function unloadImage(){
