@@ -368,7 +368,7 @@ function readURL(input) {
 				/*img.val = '';
 				input.value = null;
 				console.log('Input value after remove: ', inputfield.value)*/
-			});
+			//});
 			
             /*var imageBase64 = e.target.result;
             var img = new Image();
