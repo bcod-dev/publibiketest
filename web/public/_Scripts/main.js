@@ -435,7 +435,7 @@ $('#upload').click(function(e) {
             }
         },
         error: function(errror){
-            onError(error)
+            onError(message)
         }
     });
 });
