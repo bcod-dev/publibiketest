@@ -338,7 +338,7 @@ class DefaultController extends Controller
             $mail->Timeout = 5;
             $mail->SMTPAuth   = true;
 
-            $mail->Host       = 'smtp.gmail.com';
+            $mail->Host       = 'cressida.kreativmedia.ch';
             $mail->Username   = 'kadambari@bcod.co.in';
             $mail->Password   = 'Kadu@1496';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
