@@ -24,7 +24,7 @@
                     <a href="javascript: getCurrentLocation();" class="text-blue"><strong><?php echo trans('my_loction'); ?></strong></a>
               </p>
             </div>
-            
+             <p id="info" class="location-error"></p>
           </div>
           <div class="form-label-group">
             <textarea
@@ -101,7 +101,6 @@
 	
             </div>
           </div>
-          <p id="info" class="location-error"></p>
           <p id="normal-text" class="text normalmsg"><?php echo trans('normal_text')?></p>
           <div class="box-action">
             <button class="btn btn-lg btn-block btn-primary btn-center" id="upload" type="submit">
