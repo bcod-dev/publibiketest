@@ -23,7 +23,6 @@
               <p class="location-value__get">
                     <a href="javascript: getCurrentLocation();" class="text-blue"><strong><?php echo trans('my_loction'); ?></strong></a>
               </p>
-			  <p class="text infotext">Location service in not activated</p>
             </div>
             
           </div>
