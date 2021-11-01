@@ -339,8 +339,8 @@ class DefaultController extends Controller
             $mail->SMTPAuth   = true;
 
             $mail->Host       = 'cressida.kreativmedia.ch';
-            $mail->Username   = 'kadambari@bcod.co.in';
-            $mail->Password   = 'Kadu@1496';
+            $mail->Username   = 'found@publibike-service.ch';
+            $mail->Password   = 'N1n5s_0v';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;     
 
