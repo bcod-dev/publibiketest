@@ -345,16 +345,16 @@ class DefaultController extends Controller
             $mail->Port       = 465;     
 
             //Recipients
-            $mail->setFrom('kadambari@bcod.co.in', 'Publibke');
+            $mail->setFrom('anu.premi@mndigitalswat.com', 'Publibke');
 
             if(_ENV == "dev")
             {
-                $mail->addAddress('kadambari@bcod.co.in');  
+                $mail->addAddress('anu.premi@mndigitalswat.com');  
                 //$mail->addAddress('sofian.zubi@publibike.ch');
             }
             else 
             {
-		  $mail->addAddress('kadambari@bcod.co.in');   
+		  $mail->addAddress('anu.premi@mndigitalswat.com');   
                 //$mail->addAddress('email2lostbiketicket@o-1pbg85gwazpe7aslaozn27obujy8xem83d72llqp14nos04kem.0y-a2afuai.eu25.apex.salesforce.com');
             }
             
