@@ -349,13 +349,12 @@ class DefaultController extends Controller
 
             if(_ENV == "dev")
             {
-                $mail->addAddress('kadambari@bcod.co.in');
-		echo "send dev mail";    
+                $mail->addAddress('kadambari@bcod.co.in');  
                 //$mail->addAddress('sofian.zubi@publibike.ch');
             }
             else 
             {
-		  echo "send not dev mail";    
+		  $mail->addAddress('kadambari@bcod.co.in');   
                 //$mail->addAddress('email2lostbiketicket@o-1pbg85gwazpe7aslaozn27obujy8xem83d72llqp14nos04kem.0y-a2afuai.eu25.apex.salesforce.com');
             }
             
