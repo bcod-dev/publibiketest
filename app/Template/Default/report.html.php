@@ -24,8 +24,8 @@
                     <a href="javascript: getCurrentLocation();" class="text-blue"><strong><?php echo trans('my_loction'); ?></strong></a>
               </p>
             </div>
-             <p id="info" class="location-error"></p>
           </div>
+	  <p id="info" class="location-error"></p>
           <div class="form-label-group">
             <textarea
               id="inputComment"
