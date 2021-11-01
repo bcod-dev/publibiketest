@@ -338,18 +338,18 @@ class DefaultController extends Controller
             $mail->Timeout = 5;
             $mail->SMTPAuth   = true;
 
-            $mail->Host       = 'cressida.kreativmedia.ch';
-            $mail->Username   = 'found@publibike-service.ch';
-            $mail->Password   = 'N1n5s_0v';
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->Username   = 'kadambari@bcod.co.in';
+            $mail->Password   = 'Kadu@1496';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;     
 
             //Recipients
-            $mail->setFrom('found@publibike-service.ch', 'Publibke');
+            $mail->setFrom('kadambari@bcod.co.in', 'Publibke');
 
             if(_ENV == "dev")
             {
-                $mail->addAddress('jerry.pham@mndigitalswat.com');
+                $mail->addAddress('kadambari@bcod.co.in');
                 //$mail->addAddress('sofian.zubi@publibike.ch');
             }
             else 
