@@ -29,9 +29,7 @@
             </div>
             <div class="menu-item_text">
                 <?php echo $string = trans('download');?>
-		 <?php setlocale(LC_CTYPE, 'nl_BE.utf8');
-			$string = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
-		    echo "adbc".$string; ?>
+		 <?php  echo 'Original :', ("$string"), PHP_EOL;?>
             </div>
           </div>
         </a>
