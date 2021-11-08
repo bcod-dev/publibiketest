@@ -29,7 +29,10 @@
             </div>
             <div class="menu-item_text">
                 <?php echo $string = trans('download');?>
-		 <?php  echo 'Original :', ("download"), PHP_EOL;?>
+		 <?php 
+		    echo "DFF : "utf8_encode(htmlentities($string, ENT_QUOTES, "UTF-8"));
+		    ?>
+		    
             </div>
           </div>
         </a>
