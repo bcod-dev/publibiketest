@@ -6,7 +6,7 @@ use TinyFw\Lang;
 <head>
     <!-- Environment: <?php echo _ENV; ?> : Version 1.1.3.5.2240-->
     <meta charset="UTF-8" />
-    <meta charset="ISO-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>PubliBike - v2</title>
