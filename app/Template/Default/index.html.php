@@ -28,7 +28,7 @@
 				<img src="web/public/assets/img/rent-bike-btn.png" width="85">
             </div>
             <div class="menu-item_text">
-                <?php echo $string = trans('download');?>
+                <?php echo trans('download');?>
             </div>
           </div>
         </a>
