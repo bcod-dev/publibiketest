@@ -81,6 +81,7 @@
 				
 					<div class="menu-item_text">
 						<?php echo trans('infos'); ?>
+						Frans - Emprunter un vélo
 					</div>
 				</div>
 			</a>
