@@ -28,8 +28,10 @@
 				<img src="web/public/assets/img/rent-bike-btn.png" width="85">
             </div>
             <div class="menu-item_text">
-                <?php echo iconv("UTF-8", "ASCII//TRANSLIT", 'download');//trans('download');
-		    ?>
+                <?php echo $string = trans('download');?>
+		 <?php setlocale(LC_CTYPE, 'nl_BE.utf8');
+			$string = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
+		    echo "adbc".$string; ?>
             </div>
           </div>
         </a>
