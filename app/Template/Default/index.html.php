@@ -29,7 +29,7 @@
             </div>
             <div class="menu-item_text">
                 <?php echo $string = trans('download');?>
-		 <?php  echo 'Original :', ("$string"), PHP_EOL;?>
+		 <?php  echo 'Original :', ("download"), PHP_EOL;?>
             </div>
           </div>
         </a>
