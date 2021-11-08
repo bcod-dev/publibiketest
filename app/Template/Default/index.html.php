@@ -11,7 +11,7 @@
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
             <li><a href="?_act_=lang&lang=en&return=index"><img src="web/public/assets/img/en.png" width="24px"> English</a></li>
             <li><a href="?_act_=lang&lang=de&return=index"><img src="web/public/assets/img/de.png" width="24px"> Deutsch</a></li>
-            <li><a href="?_act_=lang&lang=fr&return=index"><img src="web/public/assets/img/fr.png" width="24px"> Français Emprunter un vélo</a></li>
+            <li><a href="?_act_=lang&lang=fr&return=index"><img src="web/public/assets/img/fr.png" width="24px"> Français</a></li>
             <li><a href="?_act_=lang&lang=it&return=index"><img src="web/public/assets/img/it.png" width="24px"> Italiano</a></li>
           </ul>
         </div>
@@ -81,7 +81,6 @@
 				
 					<div class="menu-item_text">
 						<?php echo trans('infos'); ?>
-						Frans - Emprunter un vélo
 					</div>
 				</div>
 			</a>
