@@ -28,7 +28,8 @@
 				<img src="web/public/assets/img/rent-bike-btn.png" width="85">
             </div>
             <div class="menu-item_text">
-                <?php echo trans('download'); ?>
+                <?php echo iconv("UTF-8", "ASCII//TRANSLIT", 'download');//trans('download');
+		    ?>
             </div>
           </div>
         </a>
