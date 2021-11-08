@@ -4,7 +4,7 @@ const _SUPPORTED_LANG = array(
     'en' => 'English', 
     'de' => 'Deutsch', 
     'it' => 'Italiano',
-    'fr' => 'Français Emprunter un vélo',
+    'fr' => 'Français',
 ); //Add more if you want to support other languages
 
 ?>
