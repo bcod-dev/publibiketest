@@ -5,7 +5,6 @@ use TinyFw\Lang;
 <!-- html Head -->
 <head>
     <!-- Environment: <?php echo _ENV; ?> : Version 1.1.3.5.2240-->
-    <?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
