@@ -36,7 +36,7 @@
           <a href="?_act_=report" style="color: white; text-decoration: none;">
           <div class="menu-item bg-blue">
             <div class="menu-item_icon">
-			<img src="web/public/assets/img/Button_Report bike_New.png" width="65">
+			<img src="web/public/assets/img/new-report-bike-btn.png" width="65">
               <!-- <svg width="45px" height="50px" viewBox="0 0 45 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="Home" transform="translate(-255.000000, -514.000000)" fill="#EBEBEB" fill-rule="nonzero">
