@@ -60,7 +60,7 @@
 		
 		<div class="menu">
 			<!-- TOTO Fix inline css -->
-			<a href="https://www.publibike.ch/<?php echo $lang; ?>/publibike/pricing" style="color: white; text-decoration: none;">
+			<a href="<?php echo trans('offerurl'); ?>" style="color: white; text-decoration: none;">
 				<div class="menu-item bg-pink">
 					<div class="menu-item_icon">
 						<img src="web/public/assets/img/offers-btn.png" width="85">
@@ -73,7 +73,7 @@
 			</a>
 			
 			<!-- TOTO Fix inline css -->
-			<a href="https://www.publibike.ch/<?php echo $lang; ?>/publibike/how-it-works" style="color: white; text-decoration: none;">
+			<a href="<?php echo trans('infourl'); ?>" style="color: white; text-decoration: none;">
 				<div class="menu-item bg-blue">
 					<div class="menu-item_icon">
 						<img src="web/public/assets/img/info-btn.png" width="85">
