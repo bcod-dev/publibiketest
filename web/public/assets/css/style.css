@@ -13042,3 +13042,6 @@ span.close {
 .menu-item_text {
     line-height: 17px;
 }
+textarea#inputComment::placeholder {
+    color: #959595;
+}
