@@ -13042,6 +13042,7 @@ span.close {
 .menu-item_text {
     line-height: 17px;
 }
-textarea#inputComment::placeholder {
+
+.form-finding ::placeholder {
     color: #959595;
 }
