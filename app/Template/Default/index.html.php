@@ -73,7 +73,7 @@
 			</a>
 			
 			<!-- TOTO Fix inline css -->
-			<a href="https://www.publibike.ch/de/publibike/how-it-works" style="color: white; text-decoration: none;">
+			<a href="https://www.publibike.ch/<?php echo $lang; ?>/publibike/how-it-works" style="color: white; text-decoration: none;">
 				<div class="menu-item bg-blue">
 					<div class="menu-item_icon">
 						<img src="web/public/assets/img/info-btn.png" width="85">
