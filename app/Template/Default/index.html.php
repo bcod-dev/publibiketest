@@ -60,7 +60,7 @@
 		
 		<div class="menu">
 			<!-- TOTO Fix inline css -->
-			<a href="https://publibikenew.herokuapp.com/de/publibike/pricing" style="color: white; text-decoration: none;">
+			<a href="https://www.publibike.ch/de/publibike/pricing" style="color: white; text-decoration: none;">
 				<div class="menu-item bg-pink">
 					<div class="menu-item_icon">
 						<img src="web/public/assets/img/offers-btn.png" width="85">
