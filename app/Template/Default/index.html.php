@@ -33,7 +33,7 @@
           </div>
         </a>
         <!-- TOTO Fix inline css -->
-          <a href="?_act_=report" style="color: white; text-decoration: none;">
+          <a href="<?php echo trans('rentbikeurl'); ?>" style="color: white; text-decoration: none;">
           <div class="menu-item bg-blue">
             <div class="menu-item_icon">
 			<img src="web/public/assets/img/report-bike-btn1.png" width="65">
